@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import clsx from "clsx";
-import React, { Component } from "react";
+import React from "react";
 
 const drawerWidth = 240;
 

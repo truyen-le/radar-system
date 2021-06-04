@@ -17,7 +17,9 @@ import {
   Mail,
   TrackChanges,
 } from "@material-ui/icons";
-import React, { Component } from "react";
+import React from "react";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -65,6 +67,9 @@ const useStyles = makeStyles((theme) => ({
 function MenuDrawer({ open = false, handleMenu }) {
   const classes = useStyles();
   const theme = useTheme();
+
+  const history = useHistory();
+
   return (
     <Drawer
       className={classes.drawer}
@@ -82,14 +87,33 @@ function MenuDrawer({ open = false, handleMenu }) {
       </div>
       <Divider />
       <List>
-        {["Home", "Radar Control"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <Home /> : <TrackChanges />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem
+          button
+          key={"home"}
+          onClick={() => {
+            history.push("");
+          }}
+        >
+          <ListItemIcon>
+            {" "}
+            <Home />
+          </ListItemIcon>
+          <ListItemText primary={"Home"} />
+        </ListItem>
+        <ListItem
+          button
+          key={"radar_control"}
+          onClick={() => {
+            history.push("control");
+          }}
+        >
+          <ListItemIcon>
+            {" "}
+            <TrackChanges />
+          </ListItemIcon>
+          <ListItemText primary={"Radar Control"} />
+          <Link to="control" />
+        </ListItem>
       </List>
       <Divider />
       <List>

@@ -1,13 +1,13 @@
-import "./App.scss";
-import TopBar from "./components/TopBar";
-import MenuDrawer from "./components/MenuDrawer";
+import "../App.scss";
+import TopBar from "../components/TopBar";
+import MenuDrawer from "../components/MenuDrawer";
 import { Box, CssBaseline, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import { useState } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import ControlPage from "./pages/ControlPage";
-import InfoPage from "./pages/InfoPage";
+import HomePage from "./HomePage";
+import ControlPage from "./ControlPage";
+import InfoPage from "./InfoPage";
 
 const drawerWidth = 240;
 
@@ -37,11 +37,12 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: drawerWidth,
   },
 }));
-function Routes() {
-    const classes = useStyles();
+
+function Main() {
+  const classes = useStyles();
 
   const [openDrawer, setOpenDrawer] = useState(false);
-  
+
   return (
     <BrowserRouter>
       <CssBaseline />
@@ -65,4 +66,5 @@ function Routes() {
     </BrowserRouter>
   );
 }
-export default Routes;
+
+export default Main;
