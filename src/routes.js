@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    [theme.breakpoints.down("md")]: {
+      marginLeft: 0,
+    },
     marginLeft: drawerWidth,
   },
 }));

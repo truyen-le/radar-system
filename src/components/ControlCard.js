@@ -33,8 +33,8 @@ export default function ControlCard({
           <Grid item xs={allowAuto ? 8 : 12}>
             <Slider
               aria-label="Temperature"
-              defaultValue={value}
-              getAriaValueText={(newValue) => {
+              value={value}
+              onChange={(event,newValue) => {
                 setValue(newValue);
               }}
               valueLabelDisplay="auto"
