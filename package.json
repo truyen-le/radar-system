@@ -33,7 +33,6 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
