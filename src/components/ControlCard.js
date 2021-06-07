@@ -24,7 +24,7 @@ export default function ControlCard({
   const [value, setValue] = useState(defaultValue);
   const [auto, setAuto] = useState(false);
   return (
-    <Card className="h-80 p-5 border-2 border-blue-500 rounded-md">
+    <Card className="h-80 card">
       <CardHeader
         title={<Typography variant="h4">{title}</Typography>}
       ></CardHeader>
@@ -34,7 +34,7 @@ export default function ControlCard({
             <Slider
               aria-label="Temperature"
               value={value}
-              onChange={(event,newValue) => {
+              onChange={(event, newValue) => {
                 setValue(newValue);
               }}
               valueLabelDisplay="auto"

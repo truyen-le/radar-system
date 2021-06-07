@@ -50,14 +50,15 @@ function Routes() {
       <CssBaseline />
       <TopBar open={openDrawer} handleMenu={() => setOpenDrawer(true)} />
       <MenuDrawer open={openDrawer} handleMenu={() => setOpenDrawer(false)} />
+      <div className={classes.drawerHeader} />
       <Box
         className={clsx(classes.content, {
           [classes.contentShift]: openDrawer,
         })}
         display="flex"
         flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
+        // justifyContent="center"
+        // alignItems="center"
       >
         <Switch>
           <Route exact path="/" component={HomePage} />
